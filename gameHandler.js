@@ -113,6 +113,9 @@ function moveEnemyCars(carElement){
     });
 } 
 
+let scoreIncrementInterval = 10; // Number of frames to wait before incrementing the score
+let frameCount = 0;
+
 function gamePlay() {
     let carElement = document.querySelector('.car');
     let road = gameArea.getBoundingClientRect();
@@ -129,11 +132,13 @@ function gamePlay() {
         carElement.style.top = player.y + "px";
         carElement.style.left = player.x + "px";
 
-        window.requestAnimationFrame(gamePlay);
+        frameCount++;
+        if (frameCount % scoreIncrementInterval === 0) {
+            player.score++;
+            score.innerHTML = 'Score: ' + player.score;
+        }
 
-        player.score++;
-        const ps = player.score - 1;
-        score.innerHTML = 'Score: ' + ps;          
+        window.requestAnimationFrame(gamePlay);        
     }
 }
 document.addEventListener('keydown', (e)=>{
