@@ -83,7 +83,7 @@ function onGameOver() {
     gameStart.pause();
     gameOver.play();
     startScreen.classList.remove('hide');
-    startScreen.innerHTML = "Game Over <br> Your final score is " + player.score + "<br> Press here to restart the game.";
+    startScreen.innerHTML = `Game Over <br> Your final score: <b style="font-size:1.8rem">${player.score} </b> <br> Press here to restart the game.`;
 }
 
 function moveRoadLines(){

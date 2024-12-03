@@ -34,6 +34,16 @@
             border-right: 7px dashed #c8d6e5;
             border-left: 7px dashed #c8d6e5;
         }
+
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .header img{
+            position: absolute;
+            top: 15px;
+            right: 40px;
+        }
         .score{
             position: absolute;
             top: 15px;
@@ -48,7 +58,7 @@
         }
         .startScreen{
             position: absolute;
-            background-color: #ee5253;
+            background-color: #C23364;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
